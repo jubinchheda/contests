@@ -1,3 +1,4 @@
+# your code goes here
 from collections import Counter
 import math
 import fileinput
@@ -26,7 +27,7 @@ def isPalPossible(inStr):
    dictum.pop(oddChar, None)
    runningProduct = math.factorial(totalComb)
    #print runningProduct
-   for k, val in dictdum.items():
+   for k, val in dictum.items():
       runningProduct/=math.factorial(val)
    return runningProduct
    
