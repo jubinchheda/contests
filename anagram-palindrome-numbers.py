@@ -9,7 +9,7 @@ def isPalPossible(inStr):
    allowedMid = 0
    if stringLen % 2 == 1:
       allowedMid = 1
-   
+   print "allowedMid", allowedMid
    listChar =[]
    for charx in inStr:
       listChar.append(charx)
@@ -22,10 +22,13 @@ def isPalPossible(inStr):
       if val%2 == 1:
          numOdds += 1
          oddChar = k
+         print "oddChar", oddChar
+         print "numOdds", numOdds
          if numOdds >allowedMid:
          	return 0
    dictum.pop(oddChar, None)
    runningProduct = math.factorial(totalComb)
+   print "runningProduct", runningProduct
    #print runningProduct
    for k, val in dictum.items():
       runningProduct/=math.factorial(val)
@@ -42,4 +45,3 @@ def main():
    print isPalPossible(paramList[0])
    
 main()
-
