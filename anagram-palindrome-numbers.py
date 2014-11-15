@@ -1,6 +1,5 @@
 from collections import Counter
-import itertools as it
-
+import math
 
 def isPalPossible(inStr):
    stringLen = len(inStr)
@@ -12,19 +11,33 @@ def isPalPossible(inStr):
    listChar =[]
    for charx in inStr:
       listChar.append(charx)
-   print len(it.permutations(listChar))
-   dictum = Counter(listChar)
+      dictum = Counter(listChar)
    numOdds = 0
    possiblePals = 0
-   for k, val in dictdum.items():
+   
+   oddChar = ""
+   for k, val in dictum.items():
       if val%2 == 1:
          numOdds += 1
+         oddChar = k
          if numOdds >allowedMid:
          	return 0
-    
-    
-      
+   dictum.pop(oddChar, None)
+   runningProduct = math.factorial(totalComb)
+   #print runningProduct
+   for k, val in dictdum.items():
+      runningProduct/=math.factorial(val)
+   return runningProduct
+   
    
       
-print isPalPossible("abbba")
+#print isPalPossible("abbba")
+#Maain
+def main:
+   paramList =[]
+   for line in fileinput.input():
+      paramList.append(line.rstrip())
+   print isPalPossible(paramList[0])
+   
+main()
 
