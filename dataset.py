@@ -1,8 +1,8 @@
 import fileinput
 
-def my_abs(list1, list2, leng):
+def my_abs(list1, list2):
    sum = 0
-   for i in xrange(leng):
+   for i in xrange(len(list1)):
       sum+= abs(list1[i]-list2[i])
    return sum
 
@@ -36,7 +36,8 @@ for m in xrange(k):
    min_n = 0
    for n in xrange(k):
       curr_abs = my_abs(oldData[m], newData[n])
+      #print oldData[m],newData[n],curr_abs
       if curr_abs < min_abs:
          min_abs = curr_abs
          min_n = n
-   print m,",",n
+   print m,min_n
