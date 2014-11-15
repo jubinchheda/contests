@@ -9,7 +9,7 @@ lookupDict = {}
 
 paramList=[]
 for line in fileinput.input():
-	paramList.append(line.rstrip())
+	paramList.append(line.rstrip().lower())
 	
 counterDict = Counter(paramList)
 #print counterDict
