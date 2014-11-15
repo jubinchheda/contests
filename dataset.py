@@ -1,4 +1,6 @@
 import fileinput
+import sys
+
 
 def my_abs(list1, list2):
    sum = 0
@@ -40,4 +42,8 @@ for m in xrange(k):
       if curr_abs < min_abs:
          min_abs = curr_abs
          min_n = n
-   print m,min_n
+   #print m,",",min_n
+   sys.stdout.write(str(m))
+   sys.stdout.write(',')
+   sys.stdout.write(str(min_n))
+   print "\n"
