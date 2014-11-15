@@ -20,12 +20,14 @@ orderedDict = collections.OrderedDict(sorted(counterDict.items()))
 
 for k,val in orderedDict.items():
    putVal = val
+   outputStr = ""
    if "sock" in k:
       putVal/=2
-      outputStr = "" + str(putVal) + "|" + k + "\n"
+      if putVal >0:
+         outputStr += "" + str(putVal) + "|" + k + "\n"
       if val%2 == 1:
          outputStr += "" + str(0) + "|" + k + "\n"
    else:
-      outputStr = "" + str(putVal) + "|" + k + "\n"
+      outputStr += "" + str(putVal) + "|" + k + "\n"
    sys.stdout.write(outputStr)
 	
