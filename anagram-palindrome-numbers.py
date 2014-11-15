@@ -33,7 +33,7 @@ def isPalPossible(inStr):
       
 #print isPalPossible("abbba")
 #Maain
-def main:
+def main():
    paramList =[]
    for line in fileinput.input():
       paramList.append(line.rstrip())
