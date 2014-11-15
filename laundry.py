@@ -12,10 +12,13 @@ for line in fileinput.input():
 	paramList.append(line.rstrip())
 	
 counterDict = Counter(paramList)
+print counterDict
+
 
 orderedDict = collections.OrderedDict(sorted(counterDict.items()))
+print orderedDict
 
-for k,val in counterDict:
+for k,val in orderedDict:
    outputStr = "" + str(val) + "|" + k + "\n"
    sys.stdout.write(outputStr)
 	
