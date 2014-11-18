@@ -1,4 +1,5 @@
 # your code goes here
+# your code goes here
 
 # your code goes here
 
@@ -14,25 +15,26 @@ import collections
 import sys
 
 def repeatDo(inputList):
+	op = ""
 	lenx = len(inputList)
 	if lenx == 1:
-		print inputList[0][0]
+		op+=","+str(inputList[0][0])
 		inputList.pop(0)
-		return
+		
 	else:
 		candx = paramList[0][0]
 		if candx >= lenx:
-			print inputList[0][0]
+			op+=","+str(inputList[0][0])
 			inputList.pop(0)
 		else:
-			if paramList[candx][1] = 1:
-				print inputList[0][0]
+			if paramList[candx][1] == 1:
+				op+=","+str(inputList[0][0])
 				inputList.pop(0)
 			else:
 				temp1 = inputList[candx][0]
 				inputList[candx]=[inputList[0][0], 1]
 				inputList[0]=[temp1, 0]
-				
+	return op			
 
 
 paramList=[]
@@ -41,10 +43,12 @@ for line in fileinput.input():
 #print paramList
 
 paramList.pop(0)
-
+opx=""
 while True:
-	repeatDo(paramList)
-	print paramList
+	opx+=repeatDo(paramList)
+	#print paramList
+	
 	if not paramList:
 		break
 	
+print opx[1:]
