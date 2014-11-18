@@ -1,47 +1,50 @@
 # your code goes here
 
+# your code goes here
+
+# your code goes here
+
+# your code goes here
+
+# your code goes here
+
 import fileinput
 from collections import Counter
 import collections
 import sys
 
+def repeatDo(inputList):
+	lenx = len(inputList)
+	if lenx == 1:
+		print inputList[0][0]
+		inputList.pop(0)
+		return
+	else:
+		candx = paramList[0][0]
+		if candx >= lenx:
+			print inputList[0][0]
+			inputList.pop(0)
+		else:
+			if paramList[candx][1] = 1:
+				print inputList[0][0]
+				inputList.pop(0)
+			else:
+				temp1 = inputList[candx][0]
+				inputList[candx]=[inputList[0][0], 1]
+				inputList[0]=[temp1, 0]
+				
 
-def primes(n): 
-	if n==2: return [2]
-	elif n<2: return []
-	s=range(3,n+1,2)
-	mroot = n ** 0.5
-	half=(n+1)/2-1
-	i=0
-	m=long(3)
-	while m <= mroot:
-		if s[i]:
-			j=(m*m-3)/2
-			s[j]=0
-			while j<half:
-				s[j]=0
-				j+=m
-		i=i+1
-		m=2*i+3
-	return [2]+[x for x in s if x]
 
 paramList=[]
 for line in fileinput.input():
-	paramList.append(line.rstrip())	
+	paramList.append([int(line.rstrip()), 0])	
+#print paramList
 
-k = long(paramList[0])
-print k
+paramList.pop(0)
 
-list1 = sorted(primes(k), reverse=True)
-#print list1
-list2 = list(list1)
-output1 = ""
-
-for i in list1:
-	if i-2 in list2:
-	   output1+=str(i-2)+","+str(i)
-	   print output1
-	   break
-		
-
+while True:
+	repeatDo(paramList)
+	print paramList
+	if not paramList:
+		break
 	
