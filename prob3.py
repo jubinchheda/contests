@@ -1,4 +1,8 @@
 # your code goes here
+
+# your code goes here
+
+# your code goes here
 # your code goes here
 
 # your code goes here
@@ -14,41 +18,31 @@ from collections import Counter
 import collections
 import sys
 
-def repeatDo(inputList):
-	op = ""
-	lenx = len(inputList)
-	if lenx == 1:
-		op+=","+str(inputList[0][0])
-		inputList.pop(0)
-		
-	else:
-		candx = paramList[0][0]
-		if candx >= lenx:
-			op+=","+str(inputList[0][0])
-			inputList.pop(0)
-		else:
-			if paramList[candx][1] == 1:
-				op+=","+str(inputList[0][0])
-				inputList.pop(0)
-			else:
-				temp1 = inputList[candx][0]
-				inputList[candx]=[inputList[0][0], 1]
-				inputList[0]=[temp1, 0]
-	return op			
-
+def addSqr(paramList, i, j, k, M, N, result):
+	print i,j,k,M,N
+	
 
 paramList=[]
 for line in fileinput.input():
-	paramList.append([int(line.rstrip()), 0])	
+	paramList.append(line.rstrip())	
 #print paramList
 
+N = int(paramList[0])
+M = int(paramList[1])
 paramList.pop(0)
-opx=""
-while True:
-	opx+=repeatDo(paramList)
-	#print paramList
-	
-	if not paramList:
-		break
-	
-print opx[1:]
+paramList.pop(0)
+print N
+print M
+print paramList
+
+minMN = min(M,N)
+print minMN
+
+
+result =[]
+
+for i in xrange(M):
+	for j in xrange(N):
+		for k in sorted(xrange(2, min(M-i,N-j)), reverse=True):
+			addSqr(paramList, i, j, k, M, N, result)
+			
