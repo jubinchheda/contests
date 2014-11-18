@@ -68,4 +68,12 @@ for i in xrange(M):
 		for k in sorted(xrange(2, min(M-i,N-j)), reverse=True):
 			addSqr(paramList, i, j, k, M, N, result)
 			
-print result
+print result[2]
+op1=""
+op1+=str(result[1][0])+","+str(result[1][1])
+print op1
+op2=""
+op2+=str(result[1][0]+k)+","+str( result[1][1]+k)
+print op2
+#print result[1][0],result[1][1]
+#print result[1][0]+k, result[1][1]+k
