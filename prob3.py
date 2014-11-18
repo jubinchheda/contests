@@ -22,6 +22,7 @@ import sys
 
 def addSqr(paramList, i, j, k, M, N, result):
 	#print i,j,k,M,N
+	#print result
 	matchChar = paramList[i][j]
 	#print matchChar
 	for p in xrange(i+1, i+k-1):
@@ -73,7 +74,7 @@ op1=""
 op1+=str(result[1][0])+","+str(result[1][1])
 print op1
 op2=""
-op2+=str(result[1][0]+k)+","+str( result[1][1]+k)
+op2+=str(result[1][0]+result[0])+","+str( result[1][1]+result[0])
 print op2
 #print result[1][0],result[1][1]
 #print result[1][0]+k, result[1][1]+k
