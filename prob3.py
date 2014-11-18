@@ -1,3 +1,5 @@
+# your code goes here
+
 import fileinput
 from collections import Counter
 import collections
@@ -27,10 +29,19 @@ paramList=[]
 for line in fileinput.input():
 	paramList.append(line.rstrip())	
 
-k = long(paramsList[0])
+k = long(paramList[0])
 print k
 
-list1 = primes(k)
+list1 = sorted(primes(k), reverse=True)
+#print list1
 list2 = list(list1)
-print list1
-print list2
+output1 = ""
+
+for i in list1:
+	if i-2 in list2:
+	   output1+=str(i-2)+","+str(i)
+	   print output1
+	   break
+		
+
+	
